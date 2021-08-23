@@ -1,9 +1,14 @@
 language: rust
 rust:
-  - stable
-  - beta
-  - nightly
+- stable
+- beta
+- nightly
 jobs:
   allow_failures:
-    - rust: nightly
+  - rust: nightly
   fast_finish: true
+after_success:
+  - script/auto_merge.sh
+env:
+  global:
+    secure: POPlrBfMxFyMX+VF2A+7DCPLp2+eC0nQOroTNQ1Mfqc/c0KaRWsPs8xx4+rexHcfwxVvIPcyCgaGIViV/euTtT2LVmL+WPPFKyBIX9nuTiD4GKnDwpydq+nZU5BS2280P4AT8a61GSueYfnj+d89l0CI+modVeWLyMTPh5nky/OsJv7AzTk67z7C+JW+s4out2o50qDefK02uyh8nxEHLkeMvZFaIDYv5vHDyYgZNUXFyNt4A63qgq4s5zIvqU2/tMjS44BoVc5vz5LcQNRNZ8e0hmgVrvENdkRDcQHm2dorbHV9yagwM8SaxA/tEE5jKSWMpo/bf87qfnCkLVyokAI7u/1/lGREaUR9WtUOC6yA+l8CV2n7M+Cj+B0PnPNFUy+EDygdVS/2RiTgcd+b8+vHQqotPenuancrro9BHvL7dTl7IoUy0QEjUJpuHTfxY8nx/Besl9YmT4Eim3wIsKVPWhK1BjNFIYU+QVG1kmg6Leh9jm960p8GJeADjWUZnSA5UAbVB14BzTEhsK2ktOGlnn07vPhKiMh5AJFQFzUJP3jaTmb2ZSlYaSotHuUeiBpfSIlRAXsCi9w/2ou48KvaDTqos/I1NRDod6ffj350WMXuUkOvZX9fLFAH53sPFojZl3W4mx6HgZoltUBbulzBDaqknJzTPBAdNa27XgU=
